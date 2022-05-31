@@ -1,0 +1,160 @@
+<!-- <h1>
+    {{ ( heroe.id )? 'Editar' : 'Nuevo' }}
+    Héroe
+    <small>{{ heroe.superhero }}</small>
+</h1> -->
+
+<div fxLayout="row"
+     fxLayoutGap="40px"
+     fxLayout.xs="column">
+
+    <div fxFlex="40%" fxLayout="column">
+
+        <div fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column" >
+                <mat-label>Nombre</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="muerto.name"
+                       required>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100">
+                <mat-label>Apellidos</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="muerto.apellidos"
+                       required>
+            </mat-form-field>
+        </div>
+
+
+        <mat-form-field>
+            <mat-label>Localización</mat-label>
+            <input matInput
+                   type="text"
+                   [(ngModel)]="muerto.sepult"
+                   required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Mote</mat-label>
+            <input matInput
+                   type="text"
+                   [(ngModel)]="muerto.mote"
+                   required>
+        </mat-form-field>
+<br>
+<br>
+        <div 
+        *ngIf="!nacio"
+        fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column" >
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="muerto.nacio"
+            required>
+        </mat-form-field>
+        
+        <div fxFlex="100">
+        <button mat-raised-button
+                    color="primary"
+                    (click)="modificarNacio()">
+                <mat-icon>edit</mat-icon>
+                {{ ( !mostrarFecha )? 'Mofificar Nacimiento?' : 'Crear' }}
+            </button>
+        </div>
+        </div>
+    <br>
+    <br>
+    <div *ngIf="mostrarFecha">
+        <mat-form-field 
+            appearance="fill">
+            <mat-label>Nacimiento</mat-label>
+            <input matInput
+            [matDatepicker]="picker"
+            [(ngModel)]="muerto.nacio"
+            (change)="fechaNacio($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div 
+        *ngIf="!fallecio"
+        fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column" >
+            <mat-label>Fecha de Defunción</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="muerto.fallecio"
+            required>
+        </mat-form-field>
+        <br>
+        <br>
+        
+        
+        <div fxFlex="100">
+        <button mat-raised-button
+                    color="primary"
+                    (click)="modificarFallecio()">
+                <mat-icon>edit</mat-icon>
+                {{ ( !mostrarFechaDef )? 'Mofificar Defunción?' : 'Crear' }}
+            </button>
+        </div>
+        </div>
+       
+            <br>
+            <div *ngIf="mostrarFechaDef">
+                <mat-form-field 
+                    appearance="fill">
+                    <mat-label>Defunción</mat-label>
+                    <input matInput
+                    [matDatepicker]="picker"
+                    [(ngModel)]="muerto.fallecio"
+                    (change)="fechaFallecio($event)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+<br>
+<br>
+        <div fxLayout>
+            <button mat-raised-button
+                    color="primary"
+                    (click)="actualizar()">
+                <mat-icon>edit</mat-icon>
+                {{ ( muerto.id )? 'Actualizar' : 'Crear' }}
+            </button>
+
+            <span class="spacer"></span>
+
+            <button *ngIf="muerto.id"
+                    mat-raised-button
+                    (click)="eliminar()"
+                    color="warn">
+                <mat-icon>remove</mat-icon>
+                Borrar
+            </button>
+        </div>
+
+
+    </div>
+
+    <div fxFlex="30%">
+        <img width="100%" [src]="muerto.url">
+        <input type="file" (change)="capturarFallecido($event)">
+    </div>
+    <div fxFlex="30%">
+        <img width="100%" [src]="muerto.url2">
+        <input type="file" (change)="capturarSepultura($event)">
+    </div>
+
+</div>

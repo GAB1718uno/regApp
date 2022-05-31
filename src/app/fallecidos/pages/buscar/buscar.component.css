@@ -1,0 +1,17 @@
+.row.wrap.container {
+margin: 1px;
+padding: 1px;
+}
+
+.col-xs-12.col-md-4 {
+    padding: 1px;
+}
+
+div {
+    padding: 1px;
+}
+
+.container {
+    padding: 1px;
+    margin: 1px;
+}

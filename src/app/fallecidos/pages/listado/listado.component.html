@@ -1,0 +1,21 @@
+<h1>Últimos Fallecidos</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap"  fxFlexAlignContent="space-between"
+fxLayoutAlign="space-between start"
+    fxLayoutGap="1.5px">
+
+    <div 
+    fxFlex.xl="11"
+    fxFlex.lg="13"
+    fxFlex.md="18"
+    fxFlex.sm="23"
+    fxFlex.xs="32" 
+    *ngFor="let coca of muertos">
+      <app-fallecidos-tarjeta [item]="coca" [comprobando]="prueba"></app-fallecidos-tarjeta>
+    </div>
+
+
+</div>
+

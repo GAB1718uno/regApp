@@ -1,0 +1,213 @@
+<!-- <div *ngIf="tontaa.length > 0; else agregador"></div>
+<ng-template #agregador>
+  <div fxFlex="100%" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="center">
+
+    <div fxFlex="30">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cementerio (disabled)</mat-label>
+        <input matInput disabled value="Aspe">
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nombre del fallecido</mat-label>
+              <input matInput (ngModel)="muerto.name">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Apellidos</mat-label>
+              <input matInput required value="" name="apellidos" [(ngModel)]="muerto.apellidos">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Calle de Enterramiento</mat-label>
+          <input matInput name="dato1" [(ngModel)]="dato1" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Número</mat-label>
+          <input matInput name="dato" [(ngModel)]="dato" required>
+        </mat-form-field>
+      </p>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker1" name="fechaNacio" (dateChange)="fechaNacio($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <table>
+        <td>
+          <tr>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha de Defunción</mat-label>
+              <input matInput [matDatepicker]="picker" name="fechaFallecio" (dateChange)="fechaFallecio($event)">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </tr>
+        </td>
+      </table>
+
+    <mat-form-field>
+      <input matInput
+                   type="url"
+                   [(ngModel)]="muerto.url"
+                   required>
+        </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Mote</mat-label>
+              <input matInput required value="" name="mote" [(ngModel)]="muerto.mote">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <button mat-raised-button color="primary" (click)="agregarMuerto()">
+        <mat-icon mat-list-icon>add</mat-icon> Guardar Fallecido
+      </button>
+
+    </div>
+
+    <div fxFlex="30">
+      <h1>Imagen del Fallecido</h1>
+      <mat-divider></mat-divider>
+      <img width="100%" src={{capturado}}>
+      <mat-divider></mat-divider>
+
+      <input type="file" (change)="capturarFallecido($event)">
+    </div>
+
+    <div fxFlex="30">
+      <h1>Imagen de la Sepultura</h1>
+      <mat-divider></mat-divider>
+      <img width="100%" src={{capturado1}}>
+      <mat-divider></mat-divider>
+
+      <input type="file" (change)="capturarSepultura($event)">
+    </div>
+
+  </div>
+</ng-template> -->
+<form (ngSubmit)="guardar()" [formGroup]="miFormulario">
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input  type="text" 
+            class="form-control" 
+            id="nombre" 
+            aria-describedby="emailHelp"
+            formControlName="name">
+    <div id="textoAviso" class="form-text">Solamente nombre sin apellidos.</div>
+  </div>
+  <div class="mb-3">
+    <label for="apellidos" class="form-label">Apellidos</label>
+    <input type="text" 
+    formControlName="apellidos"
+    class="form-control" 
+    id="apellidos">
+  </div>
+  <div class="mb-3">
+    <label for="mote" class="form-label">Mote</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    formControlName="mote"
+    id="mote">
+  </div>
+  <div class="mb-3">
+    <label for="nacio" class="form-label">Fecha de Nacimiento</label>
+    <input 
+    type="date" 
+    class="form-control" 
+    formControlName="nacio"
+    id="nacio">
+  </div>
+  <div class="mb-3">
+    <label for="fallecio" class="form-label">Fecha de defunción</label>
+    <input 
+    type="date" 
+    class="form-control" 
+    formControlName="fallecio"
+    id="fallecio">
+  </div>
+  <div class="mb-3">
+    <label for="foto" class="form-label">Fotografia</label>
+    <input 
+    type="file" 
+    class="form-control" 
+    formControlName="url"
+    id="foto">
+  </div>
+  <div class="mb-3">
+    <label for="sepultura" class="form-label">Lugar de enterramiento</label>
+    <input 
+    type="file" 
+    class="form-control" 
+    formControlName="sepult"
+    id="sepult">
+  </div>
+  
+  <div class="mb-3 form-check">
+    <input 
+    type="checkbox" 
+    class="form-check-input" 
+    name="consentimiento"
+    id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Doy mi consentimientod</label>
+  </div>
+  <button type="submit" [disabled]="consentimiento === false" class="btn btn-primary float-end">Enviar datos</button>
+</form>
+
+<!-- 
+
+
+<div fxLayout="row wrap" fxLayoutGap="30px">
+  
+  <div class="col">
+    <form>
+  <div class="hijo-1">
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Nombre</label>
+    <input type="text"
+           class="col-sm-9 form-control"
+           formControlName="nacio"
+           placeholder="">
+</div>
+</div>
+
+  
+  <div class="hijo-2">
+  <div class="">
+    <input type="text"
+           class="form-control"
+           formControlName="nacio"
+           placeholder="Fecha de nacimiento del fallecido">
+</div>
+</div>
+
+  
+  <div class="hijo-3">
+    <div class="">
+    <input type="text"
+           class="form-control"
+           formControlName="nacio"
+           placeholder="Fecha de nacimiento del fallecido">
+</div>
+</div>
+</form>
+</div>
+</div>
+ -->

@@ -1,0 +1,21 @@
+<div class="row wrap container" fxLayoutGap="30px">
+<div class="col-xs-12 col-md-4">
+    <h2>Busquedas</h2>
+    <ul class="list-group">
+<li class="list-group-item" 
+    (click)="activarOpcion(0)" 
+    [ngClass]="{'active': seleccionadoApe}"> Por Apellido </li>
+<li class="list-group-item"
+    (click)="activarOpcion(1)" 
+    [ngClass]="{'active': seleccionadoSep}"> Por Sepultura </li>
+</ul>
+</div>
+
+<div *ngIf="option == 0" class="col-xs-12 col-md-8" fxLayout="row wrap">
+    <app-porapellido [seleccionadoA]="seleccionadoApe"></app-porapellido>
+</div>
+
+<div *ngIf="option == 1" class="col-xs-12 col-md-8" fxLayout="row wrap">
+    <app-porapellido [seleccionadoS]="seleccionadoSep"></app-porapellido>
+</div>
+</div>

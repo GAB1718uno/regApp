@@ -1,0 +1,114 @@
+mat-card {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  mat-card-content {
+    padding-top: 5px;
+    color: #0c0c0c;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    max-width: 90%;
+  }
+  mat-card-header {
+    background-color: #68A7AD;
+    color: white;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .container {
+    background-color: #99C4C8;
+    width: 100%;
+  }
+  mat-card-title {
+    margin: 0px;
+    padding-top:10px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+  mat-card-subtitle {
+    padding-top:2px;
+    line-height: 15px;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+
+  small{
+    align-content: center;
+    max-width: 100%;
+
+  }
+
+
+
+
+  mat-card{
+    background:#464141;
+    margin-top:10px;
+  }
+
+    img {
+      min-width:50px;
+      max-width:100%;
+      max-height:180px;
+      border-radius:30px
+      }
+
+  .hijo1{
+    -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+      
+  }
+  .hijo2{
+    -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align:center;
+  align-self: center;
+  }
+  .hijo3{
+    text-align:center;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 2 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align:center;
+    align-self: center;
+  
+  }
+
+  .mas {
+   border-bottom: #f1ecec;
+   border-color: #0c0c0c;
+   color: #0c0c0c;
+  }
+
+  button {
+    max-width: 90%;
+  }

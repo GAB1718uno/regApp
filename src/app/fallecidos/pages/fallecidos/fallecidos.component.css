@@ -1,0 +1,31 @@
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+  
+  .child-1
+{
+    background-color: #C8E6F5;
+    padding:10px;padding-right:10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 50px;
+    color:black; 
+}
+
+.child-2{ 
+  width:auto;
+  color:rgb(10, 10, 10); 
+  margin:0px; 
+  padding: 20px;      
+    background-color: white;
+}
+
+.child-3{
+    background-color: rgb(52 52 52);
+    border-top-right-radius: 50px;
+}
+    
+.container{
+  padding:10px;
+  background-color:#5CA0D3;
+     width:100%;
+}

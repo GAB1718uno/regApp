@@ -1,0 +1,24 @@
+<div fxLayout="row wrap"
+    fxLayoutAlign="start start"
+    fxLayoutGap="5px"
+    style="margin-top: 5px; margin-left: 5px;">
+
+    <div fxFlex="100"
+fxLayoutAlign="center"
+style="background: rgb(0, 4, 22);     border-top-right-radius: 50px;">
+<h2 style="margin-top: 5px;padding: 15px; text-align: center;">Sepultados en <br>la misma ubicación que {{ fallecido.name }}</h2>
+</div>
+
+<div fxFlex="100"
+fxFlex.xl="31.5"
+    fxFlex.lg="32"
+    fxFlex.md="42"
+    fxFlex.sm="23"
+    fxFlex.xs="30"
+    fxLayoutGap="10px"
+    fxLayoutAlign="space-around center"  
+*ngFor="let boba of relacionados">
+  <app-fallecidos-tarjeta [item]="boba"></app-fallecidos-tarjeta>
+</div>
+
+</div>

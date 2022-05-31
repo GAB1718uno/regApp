@@ -1,0 +1,20 @@
+<h1>DashBoard</h1>>
+<hr>
+<p>
+    Esta página solo funcionará si estamos logueados
+</p>
+
+<h4>Información de usuario</h4>
+<pre>
+    {{ usuario | json }}
+</pre>
+<br>
+<br>
+<button (click)="login()">
+    Permiso Concedido - Pinche AQUÍ
+</button>
+<br>
+<br>
+<button (click)="logout()">
+    Si prefere SALIR.....
+</button>

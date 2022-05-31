@@ -1,0 +1,34 @@
+<div class="mb-3 row">
+    <form (ngSubmit)="uploadFoto()" autocomplete="off" [formGroup]="formUbicacion">
+        <label for="calle">Calle: </label>
+        <input 
+            type="text"
+            class="form-control"
+            placeholder="Teclee la calle"
+            formControlName="calle"
+            #calle>
+    
+    <label for="numero">Numero: </label>
+        <input 
+            type="text"
+            class="form-control"
+            placeholder="Digite el numero"
+            formControlName="numero"
+            #numero>
+    
+    <label for="imagen">Fotografia: </label>
+        <input 
+            type="file"
+            class="form-control"
+            placeholder="Seleccione la imagen"
+            formControlName="avatar"
+            (change)="showPreview($event)"
+            #imagen>
+    
+        </form>
+
+        <br>
+
+        <img class="image" style="max-width: 400px;" src={{avatar}}>
+
+</div>

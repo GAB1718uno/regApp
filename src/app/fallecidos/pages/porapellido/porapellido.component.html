@@ -1,0 +1,36 @@
+<div class="row wrap">
+<div fxFlex="100"><h2>Resultados</h2>
+    <form>
+    <input (keyup.enter)="cambiaBusqueda()"
+            type="text"
+            name="termino"
+            autocomplete="off"
+            class="form-control"
+            placeholder=""
+            [(ngModel)]="termino">
+        </form>
+            <button (click)="cambiaBusqueda()" class="btn btn-primary float-end">Buscar</button>
+<hr></div>
+<div *ngIf="hayerror">
+<div class="alert alert-danger">
+    No se encontró ningún resultado para la búsqueda
+</div>
+</div>
+
+<div *ngIf="apellidoPreview" fxLayout="row wrap" fxLayoutAlign="space-between space-around"> 
+<div *ngFor="let buscados of cribados" fxFlex="30"> 
+<app-fallecidos-tarjeta [item]="buscados"></app-fallecidos-tarjeta>
+</div>
+</div>
+<div *ngIf="sepulturaPreview" fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="space-between space-between"> 
+<div        *ngFor="let buscados of cribados" 
+            fxFlex="22"
+            fxFlex.xs="30" 
+            fxFlex.sm="22"
+            fxFlex.md="22" 
+            fxFlex.lg="22" 
+            fxFlex.md="22"> 
+<app-fallecidos-tarjeta [item]="buscados"></app-fallecidos-tarjeta>
+</div>
+</div>
+</div>
