@@ -30,7 +30,7 @@
             <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="navegar()">
                 Ver más...
             </button>
-            <button class="edit" mat-raised-button color="primary" [disabled]="comprobando" [routerLink]="['/fallecidos/editar', item.id]">
+            <button class="edit" mat-raised-button color="primary" [disabled]="editarDeshabilitado" [routerLink]="['/fallecidos/editar', item.id]">
                 Editar
             </button>
         </mat-card-actions>

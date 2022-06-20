@@ -1,5 +1,16 @@
 <div class="mb-3 row">
-    <form (ngSubmit)="uploadFoto()" autocomplete="off" [formGroup]="formUbicacion">
+    <form autocomplete="off" [formGroup]="formUbicacion"> <!-- (ngSubmit)="uploadFile()" -->
+        <label for="tipo">Tipo</label>
+        <select
+            formControlName="tipo"
+            #tipo>
+        <option>Fallecidos</option>
+        <option>Sepulturas</option>
+        <option>Usuarios</option>
+        </select>
+
+        <br>
+        <hr>
         <label for="calle">Calle: </label>
         <input 
             type="text"
@@ -7,7 +18,7 @@
             placeholder="Teclee la calle"
             formControlName="calle"
             #calle>
-    
+    <br>
     <label for="numero">Numero: </label>
         <input 
             type="text"
@@ -15,18 +26,21 @@
             placeholder="Digite el numero"
             formControlName="numero"
             #numero>
-    
+    <br>
     <label for="imagen">Fotografia: </label>
         <input 
-            type="file"
-            class="form-control"
-            placeholder="Seleccione la imagen"
-            formControlName="avatar"
-            (change)="showPreview($event)"
-            #imagen>
+        type="file"
+        (change)="imagenSeleccionada($event)">
+    
+        
+        <br>
+        <hr>
+        <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="uploadFile()">Mandar</button>
     
         </form>
 
+        <br>
+        
         <br>
 
         <img class="image" style="max-width: 400px;" src={{avatar}}>

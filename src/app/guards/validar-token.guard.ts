@@ -19,7 +19,7 @@ private router:Router
       tap(valid=>
         {
           if(!valid){
-            this.router.navigateByUrl('dashboard')
+            this.router.navigateByUrl('auth')
         }
       })
     )
@@ -30,7 +30,7 @@ private router:Router
       tap(valid=>
         {
           if(!valid){
-            this.router.navigateByUrl('dashboard')
+            this.router.navigateByUrl('auth')
         }
       })
     )

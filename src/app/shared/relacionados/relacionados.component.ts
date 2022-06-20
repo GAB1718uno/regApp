@@ -16,6 +16,7 @@ export class RelacionadosComponent implements OnInit  {
 
   fallecido!: Muertos;
    relacionados: Muertos[] = []
+   boton_editar = true;
 
 ngOnInit(): void {
 

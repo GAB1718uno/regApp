@@ -29,7 +29,7 @@ export class AuthService {
         localStorage.setItem('token', resp.token!)
         
       }),
-      /* map(
+      map(
         resp => {
           console.log(resp.token)
           localStorage.setItem('token', resp.token!)
@@ -40,8 +40,8 @@ export class AuthService {
           }
             return resp.ok
           }),
-       */
-      map(resp => resp.ok ),
+      
+      /* map(resp => resp.ok ), */
       catchError(error => of(error.error.msg)
       )
       )

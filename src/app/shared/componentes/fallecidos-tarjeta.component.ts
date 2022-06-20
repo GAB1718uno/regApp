@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class FallecidosTarjetaComponent {
   @Input() item!: Muertos;
-  @Input() comprobando = false;
+  @Input() editarDeshabilitado = false;
 
 constructor (
   private route:Router )

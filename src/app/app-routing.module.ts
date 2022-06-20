@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { MainComponent } from './auth/pages/main/main.component';
 import { HomeComponent } from './fallecidos/pages/home/home.component';
+import { ValidarTokenGuard } from './guards/validar-token.guard';
 
 const routes: Routes = [
   {
@@ -19,10 +20,16 @@ const routes: Routes = [
     loadChildren:() => import('./protected/protected.module').then(m => m.ProtectedModule),
     },
   {
+    path:'shared',
+    loadChildren:() => import('./shared/shared.module').then(m => m.SharedModule),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+    },
+  {
     path:'fallecidos',
     loadChildren:() => import('./fallecidos/fallecidos.module').then(m => m.FallecidosModule),
-    //canActivate: [ ValidarTokenGuard ],
-    //canLoad: [ ValidarTokenGuard ]
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
   
   },
   
@@ -32,7 +39,7 @@ const routes: Routes = [
   },
   {
     path:'**',
-    redirectTo:'404'
+    redirectTo:'auth'
   }
 ];
 

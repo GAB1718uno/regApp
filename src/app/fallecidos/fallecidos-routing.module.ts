@@ -6,7 +6,7 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { FallecidosComponent } from './pages/fallecidos/fallecidos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EditarComponent } from './pages/editar/editar.component';
-import { UbicacionComponent } from './pages/ubicacion/ubicacion.component';
+import { CrearUbicacionComponent } from '../shared/componentes/crear-ubicacion/crear-ubicacion.component';
 
 const routes : Routes =
 [
@@ -24,7 +24,7 @@ const routes : Routes =
     },
     {
       path:'ubicacion',
-      component:UbicacionComponent
+      component:CrearUbicacionComponent
     },
      {
         path:'editar/:id',

@@ -1,3 +1,4 @@
+
 export interface Muertos {
     id?:        string;
     name?:      string;
@@ -8,4 +9,12 @@ export interface Muertos {
     url?:       string;
     url2?: string;
     sepult?: string;
+    sepulturaId?: string;
+}
+
+export interface Files {
+
+    calle?: string;
+      numero?:string;
+      avatar?:string
 }

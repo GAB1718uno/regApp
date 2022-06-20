@@ -9,6 +9,7 @@ import { TemporalComponent } from './componentes/temporal/temporal.component';
 import { DetalleFallecidoComponent } from './componentes/detalle-fallecido/detalle-fallecido.component';
 import { UbicacionComponent } from './componentes/ubicacionreal/ubicacionreal.component';
 import { CrearUbicacionComponent } from './componentes/crear-ubicacion/crear-ubicacion.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 
@@ -26,7 +27,8 @@ import { CrearUbicacionComponent } from './componentes/crear-ubicacion/crear-ubi
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    RouterModule
+    RouterModule,
+    SharedRoutingModule
   ],
   exports:[
     RelacionadosComponent,
