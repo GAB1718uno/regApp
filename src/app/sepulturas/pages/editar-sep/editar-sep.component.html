@@ -3,7 +3,8 @@
         <label for="tipo">Tipo</label>
         <select
             formControlName="tipo"
-            #tipo>
+            #tipo
+            >
         <option>Fallecidos</option>
         <option>Sepulturas</option>
         <option>Usuarios</option>
@@ -35,7 +36,7 @@
         
         <br>
         <hr>
-        <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="uploadFile()">Mandar</button>
+        <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="actualizar()">Actualizar</button>
     
         </form>
 
@@ -43,6 +44,10 @@
         
         <br>
 
-        <img class="image" style="max-width: 400px;" src={{avatar}}>
+        <img
+      src="http://localhost:3000/api/uploads/sepulturas/{{sepultura.avatar}}"
+      class="card-img-top"
+      alt="..."
+    />
 
 </div>

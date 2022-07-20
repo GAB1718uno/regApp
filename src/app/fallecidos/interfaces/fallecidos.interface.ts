@@ -10,6 +10,7 @@ export interface Muertos {
     url2?: string;
     sepult?: string;
     sepulturaId?: string;
+    likes?:number;
 }
 
 export interface Files {

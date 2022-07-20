@@ -7,9 +7,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { TemporalComponent } from './componentes/temporal/temporal.component';
 import { DetalleFallecidoComponent } from './componentes/detalle-fallecido/detalle-fallecido.component';
-import { UbicacionComponent } from './componentes/ubicacionreal/ubicacionreal.component';
-import { CrearUbicacionComponent } from './componentes/crear-ubicacion/crear-ubicacion.component';
 import { SharedRoutingModule } from './shared-routing.module';
+import { SepulturasTarjetaComponent } from './componentes/sepulturas-tarjeta/sepulturas-tarjeta.component';
+import { ComentariosModule } from '../comentarios/comentarios.module';
 
 
 
@@ -19,24 +19,22 @@ import { SharedRoutingModule } from './shared-routing.module';
     FallecidosTarjetaComponent,
     TemporalComponent,
     DetalleFallecidoComponent,
-    UbicacionComponent,
-    CrearUbicacionComponent
-
+    SepulturasTarjetaComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     RouterModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    ComentariosModule
   ],
   exports:[
     RelacionadosComponent,
     FallecidosTarjetaComponent,
     TemporalComponent,
     DetalleFallecidoComponent,
-    UbicacionComponent,
-    CrearUbicacionComponent
+    SepulturasTarjetaComponent
 ]
 })
 export class SharedModule { }

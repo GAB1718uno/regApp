@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Muertos } from '../../interfaces/fallecidos.interface';
@@ -10,13 +10,30 @@ import { FallecidosService } from '../../services/fallecidos.service';
   styleUrls: ['./fallecidos.component.css']
 })
 
-export class FallecidosComponent {
+export class FallecidosComponent implements OnInit {
   
-  @Input() fallecido!: Muertos;
+  @Input() fallecido: Muertos = {
+    id:'',
+    name: '',    
+    apellidos:'',
+    nacio:'',
+    fallecio:'', 
+    mote:'',
+    url:'',     
+    url2:'',
+    sepult:'',
+    sepulturaId:'',
+    likes:0
+  };
 
   constructor(private activatedRoute: ActivatedRoute,
     private fallecidosService: FallecidosService){
-    this.activatedRoute.params
+    
+        }
+
+        ngOnInit(): void{
+
+          this.activatedRoute.params
         .pipe(
           switchMap(({ id }) => this.fallecidosService.obtenerMuertoPorId(id))
         )
@@ -24,5 +41,6 @@ export class FallecidosComponent {
           resp =>
             this.fallecido = resp
         )
+
         }
 }

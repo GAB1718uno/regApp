@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
 import { Muertos } from 'src/app/fallecidos/interfaces/fallecidos.interface';
 import { FallecidosService } from 'src/app/fallecidos/services/fallecidos.service';
-import { environment } from 'src/environments/environment';
-import { CompartidoService } from '../../compartido.service';
 import { Sepulturas } from '../../interfaces/sepulturas.interface';
+import { SepulturaService } from '../../services/sepultura.service';
+import { environment } from 'src/environments/environment';
+import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-ubicacion-real',
-  templateUrl: './ubicacionreal.component.html',
+  selector: 'app-sepultura',
+  templateUrl: './sepultura.component.html',
   styles: [`
   img {
     width:100%;
@@ -17,14 +17,17 @@ import { Sepulturas } from '../../interfaces/sepulturas.interface';
   }`
   ]
 })
-export class UbicacionComponent implements OnInit {
+export class SepulturaComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private fallecidosService: FallecidosService,
-    private _compartido: CompartidoService) {}
+    private _sepulturaService: SepulturaService) {}
 
   fallecido!: Muertos; 
-  sepultura!:Sepulturas;
+  sepultura:Sepulturas={
+    calle:'',
+    numero:''
+  };
   imagenUrl:any = []
   private baseUrl = environment.baseUrl;
 
@@ -40,14 +43,14 @@ export class UbicacionComponent implements OnInit {
     )
     .subscribe(fallecido => {
       this.fallecido = fallecido;
-      this._compartido.obtenerSepultura(fallecido.sepulturaId)
+      this._sepulturaService.obtenerSepultura(fallecido.sepulturaId)
       .subscribe(resp => {
         this.sepultura = resp;
         /* 
         this._compartido.obtenerImagen(this.sepultura.tipo, this.sepultura.avatar)
         .subscribe(avatar => {
           console.log(avatar) */
-          this.imagenUrl=`${ this.baseUrl }/uploads/${this.sepultura.tipo}/${this.sepultura.avatar}`;
+          this.imagenUrl=`${ this.baseUrl }/uploads/sepulturas/${this.sepultura.avatar}`;
         console.log(fallecido)
         console.log(resp)
       }

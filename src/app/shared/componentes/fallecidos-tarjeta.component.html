@@ -1,6 +1,7 @@
 <mat-card class="container" fxLayout="row wrap" >
     
-    <div class="hijo1"><div class="img">
+    <div class="hijo1">
+        <div class="img">
         <img src="{{item.url}}">
     </div>
     </div>
@@ -25,6 +26,17 @@
         </mat-card-content>
     </div>
 
+    <br><hr>
+    <div class="likes" style="background-color: rgb(67, 133, 150); padding-top:5px; margin: 0px; align-content: center; vertical-align:middle; text-align:center">
+    <button (click)="like()">
+        <mat-icon color="" style="vertical-align: middle;" svgIcon="vela2"></mat-icon>
+        <mat-icon color="" style="vertical-align: middle;" svgIcon="vela3"></mat-icon>
+        <mat-icon *ngIf="apretado" color="warn" style="vertical-align: middle;" svgIcon="corazon1"></mat-icon>
+        <mat-icon *ngIf="!apretado" color="" style="vertical-align: middle;" svgIcon="corazon1"></mat-icon>
+    </button> <span style="vertical-align: middle; font-size: medium;"> {{contador}}</span>
+</div>
+    <hr><br>
+
     <div class="hijo3" style="text-align: center;">
         <mat-card-actions>
             <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="navegar()">
@@ -37,25 +49,3 @@
     </div>
 
 </mat-card>
-<!-- <mat-card>
-    <mat-card-header>
-        <mat-card-title>{{item.name}}</mat-card-title>
-        <mat-card-subtitle>{{item.apellidos}}</mat-card-subtitle>
-    </mat-card-header>
-    <img src="{{item.url}}">
-
-    <mat-card-content>
-        <small><mat-icon >stars</mat-icon>   {{item.nacio}}</small><br>
-        <small><mat-icon >stars</mat-icon> {{item.fallecio}}</small>
-        <small><mat-icon >stars</mat-icon> {{item.id}}</small>
-        
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button color="warn" (click)="navegar()">
-            Ver más...
-        </button>
-        <button mat-button color="info" [routerLink]="['/fallecidos/editar', item.id]">
-            Editar
-        </button>
-    </mat-card-actions>
-</mat-card> -->

@@ -1,26 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CompartidoService } from '../../compartido.service';
+import { Sepulturas } from '../../interfaces/sepulturas.interface';
+import { SepulturaService } from '../../services/sepultura.service';
+import { CompartidoService } from '../../../shared/compartido.service';
 
 @Component({
-  selector: 'app-crear-ubicacion',
-  templateUrl: './crear-ubicacion.component.html',
-  styleUrls: ['./crear-ubicacion.component.css']
+  selector: 'app-agregar-sep',
+  templateUrl: './agregar-sep.component.html',
+  styleUrls: ['./agregar-sep.component.css']
 })
-export class CrearUbicacionComponent implements OnInit {
+export class AgregarSepComponent implements OnInit {
+
+  mierda!:FormGroup
 
   formUbicacion:FormGroup;
   avatar: string = '';
   capturado1:any;
   nombreFile = ''; 
   imagenSubir!:File;
+  items:Sepulturas[] = [{}];
 
   constructor(
     private fb:FormBuilder,
+    private _sepulturaService:SepulturaService,
     private _compartidoService:CompartidoService
   ) {
 
     this.formUbicacion = this.fb.group({
+      id:[''],
       calle:[''],
       numero:[''],
       avatar:[''],
@@ -31,6 +38,13 @@ export class CrearUbicacionComponent implements OnInit {
   
   
   ngOnInit(): void {
+    this._sepulturaService.obtenerSepulturas()
+    .subscribe(
+      resp => {
+        this.items = resp;
+        console.log(this.items)
+      }
+    )
   }
 
   imagenSeleccionada( event:any ){
@@ -38,20 +52,20 @@ export class CrearUbicacionComponent implements OnInit {
     console.log(this.imagenSubir)
   }
 
-  showPreview(event:any) {
+  /* showPreview(event:any) {
     const nombreImagen = event.target.files[0].name;
     console.log(nombreImagen)
   this.capturado1 = `/assets/images/${nombreImagen}`;
   this.nombreFile = nombreImagen;
    this.avatar= this.capturado1;
-  }
+  } */
 
   uploadFile(){
 
     console.log(this.nombreFile)
-    const {calle, numero, tipo } = this.formUbicacion.value;
+    const {id, calle, numero, tipo } = this.formUbicacion.value;
 
-    this._compartidoService.uploadFile(calle, numero, tipo, this.imagenSubir)
+    this._compartidoService.uploadFile(id, calle, numero, tipo, this.imagenSubir)
     .subscribe(resp=>
       console.log(resp))
   }

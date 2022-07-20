@@ -22,9 +22,6 @@ export class PorapellidoComponent implements OnInit {
 
   constructor( private _fallecidoService: FallecidosService ) { }
 
-  
-
-
   ngOnInit(): void {
 
     

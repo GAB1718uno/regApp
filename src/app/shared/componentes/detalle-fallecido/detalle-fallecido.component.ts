@@ -12,12 +12,8 @@ import { FallecidosService } from 'src/app/fallecidos/services/fallecidos.servic
 export class DetalleFallecidoComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-    private fallecidosService: FallecidosService) {}
-
-  fallecido!: Muertos; 
-
-  ngOnInit(): void {
-    this.activatedRoute.params
+    private fallecidosService: FallecidosService) {
+this.activatedRoute.params
     .pipe(
       switchMap
         (
@@ -26,8 +22,28 @@ export class DetalleFallecidoComponent implements OnInit {
     )
     .subscribe(fallecido => {
       this.fallecido = fallecido;
+      console.log(fallecido.url); 
   })
 
+
+    }
+
+  fallecido: Muertos = {
+    id:'',
+    name: '',    
+    apellidos:'',
+    nacio:'',
+    fallecio:'', 
+    mote:'',
+    url:'',     
+    url2:'',
+    sepult:'',
+    sepulturaId:'',
+    likes:0
+  }; 
+
+  ngOnInit(): void {
+    
 }
 
 }

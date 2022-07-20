@@ -27,6 +27,7 @@ export class EditarComponent implements OnInit {
     url: '',
     url2: '',
     sepult: '',
+    sepulturaId:''
   }
 
   mostrarFecha = false;

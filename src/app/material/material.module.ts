@@ -12,6 +12,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -31,7 +32,9 @@ MatInputModule,
 MatListModule,
 MatProgressSpinnerModule,
 MatGridListModule,
-MatCardModule
+MatCardModule,
+MatExpansionModule,
+
   ]
 })
 export class MaterialModule { }

@@ -12,9 +12,10 @@ import { MaterialModule } from '../material/material.module';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
-import { UbicacionComponent } from './pages/ubicacion/ubicacion.component';
 import { PorapellidoComponent } from './pages/porapellido/porapellido.component';
 import { PorsepulturaComponent } from './pages/porsepultura/porsepultura.component';
+import { SepulturasModule } from '../sepulturas/sepulturas.module';
+import { ComentariosModule } from '../comentarios/comentarios.module';
 
 
 
@@ -28,7 +29,6 @@ import { PorsepulturaComponent } from './pages/porsepultura/porsepultura.compone
     HomeComponent,
     FallecidosComponent,
     ImagenPipe,
-    UbicacionComponent,
     PorapellidoComponent,
     PorsepulturaComponent
   ],
@@ -38,7 +38,9 @@ import { PorsepulturaComponent } from './pages/porsepultura/porsepultura.compone
     FormsModule,
     FlexLayoutModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    SepulturasModule,
+    ComentariosModule
   ],
   exports:[
   ]

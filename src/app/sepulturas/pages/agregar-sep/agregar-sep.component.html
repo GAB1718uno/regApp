@@ -1,0 +1,56 @@
+<div class="mb-3 row">
+    <form autocomplete="off" [formGroup]="formUbicacion"> <!-- (ngSubmit)="uploadFile()" -->
+        <label for="tipo">Tipo</label>
+        <select
+        formControlName="tipo"
+        #tipo>
+        <option>Fallecidos</option>
+        <option selected>Sepulturas</option>
+        <option>Usuarios</option>
+    </select>
+    <br>
+    <br>
+    <label for="Calle">Encontrar Calle</label>
+        <select 
+            formControlName="calle"
+            #calle>
+        <option *ngFor="let item of items; let i=index">{{item.calle}}, {{item.numero}}</option> <div> </div>
+        </select>
+        <br>
+    <hr>
+    <label for="calle">Calle: </label>
+        <input 
+            type="text"
+            class="form-control"
+            placeholder={{items[0].calle}}
+            formControlName="calle"
+            #calle>
+    <br>
+        <br>
+    <label for="numero">Numero: </label>
+        <input 
+            type="text"
+            class="form-control"
+            placeholder="Digite el numero"
+            formControlName="numero"
+            #numero>
+    <br>
+    <label for="imagen">Fotografia: </label>
+        <input 
+        type="file"
+        (change)="imagenSeleccionada($event)">
+    
+        
+        <br>
+        <hr>
+        <button class="mas" mat-stroked-button style="margin:5px;" color="warn" (click)="uploadFile()">Mandar</button>
+    
+        </form>
+
+        <br>
+        
+        <br>
+
+        <img class="image" style="max-width: 400px;" src={{avatar}}>
+
+</div>

@@ -1,0 +1,27 @@
+<mat-card class="container" fxLayout="row wrap" >
+    
+  <div class="hijo1">
+      <div class="img">
+      <img src="http://localhost:3000/api/uploads/sepulturas/{{seps.avatar}}">
+  </div>
+  </div>
+
+  <div class="hijo2">
+      <mat-card-header >
+          <mat-card-title>{{seps.calle}}</mat-card-title>
+          <mat-card-subtitle>{{seps.numero}}</mat-card-subtitle>
+      </mat-card-header>
+      
+  </div>
+<br>
+<div class="hijo3">
+<mat-card-actions>
+    
+    <button class="edit" mat-raised-button color="primary" [routerLink]="['/sepulturas/editarsep/', seps.id]">
+        Editar
+    </button>
+</mat-card-actions>
+</div>
+  <!-- <button (click)="editar(seps.id)">Editar</button> -->
+
+</mat-card>

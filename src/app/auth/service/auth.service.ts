@@ -56,6 +56,7 @@ export class AuthService {
         map(
           resp => {
             console.log(resp.token)
+            console.log(resp)
             localStorage.setItem('token', resp.token!)
             this._usuario={
               usuario:resp.name!,
@@ -80,7 +81,8 @@ export class AuthService {
             return this.http.post<AuthResponse>( url , body )
             .pipe(
               tap(resp => {
-              localStorage.setItem('token', resp.token!) 
+              localStorage.setItem('token', resp.token!)
+              console.log(resp.token) 
               }),
               map(resp => resp.ok ),
               catchError(error => of(error.error.msg)

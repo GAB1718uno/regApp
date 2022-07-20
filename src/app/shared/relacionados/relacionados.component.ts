@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs';
 import { Muertos } from 'src/app/fallecidos/interfaces/fallecidos.interface';
 import { FallecidosService } from 'src/app/fallecidos/services/fallecidos.service';
 
+
 @Component({
   selector: 'app-relacionados',
   templateUrl: './relacionados.component.html',
@@ -14,7 +15,19 @@ export class RelacionadosComponent implements OnInit  {
   constructor(private activatedRoute: ActivatedRoute,
     private fallecidosService: FallecidosService) {}
 
-  fallecido!: Muertos;
+    fallecido: Muertos = {
+      id:'',
+      name: '',    
+      apellidos:'',
+      nacio:'',
+      fallecio:'', 
+      mote:'',
+      url:'',     
+      url2:'',
+      sepult:'',
+      sepulturaId:'',
+      likes:0
+    };
    relacionados: Muertos[] = []
    boton_editar = true;
 
@@ -35,6 +48,7 @@ ngOnInit(): void {
       this.fallecidosService.obtenerRelacionados(this.fallecido.id!, this.fallecido.sepult!)
     .subscribe(relacionados => {
       const arrayNuevo = relacionados.filter(data => data.id != fallecido.id)
+
       console.log(this.fallecido)
       this.relacionados = 
       arrayNuevo;

@@ -12,7 +12,7 @@ import Swal  from "sweetalert2";
 export class LoginComponent implements OnInit {
 
   miFormulario: FormGroup = this.fb.group({
-    email:['correosbasura2009@hotmail.com',[Validators.required, Validators.email]],
+    email:['correosbasura2049@hotmail.com',[Validators.required, Validators.email]],
     password:['#617sonBBA#',[Validators.required, Validators.minLength(8)]],
 
   })

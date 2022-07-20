@@ -153,8 +153,13 @@
         <input type="file" (change)="capturarFallecido($event)">
     </div>
     <div fxFlex="30%">
-        <img width="100%" [src]="muerto.url2">
-        <input type="file" (change)="capturarSepultura($event)">
+        
+        
+        <p>{{muerto.sepulturaId}}</p>
+        <app-sepultura></app-sepultura>
+
+<!--         <img width="100%" [src]="muerto.url2">
+ -->        <!-- <input type="file" (change)="capturarSepultura($event)"> -->
     </div>
 
 </div>

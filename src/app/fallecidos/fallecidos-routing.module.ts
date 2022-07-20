@@ -6,7 +6,6 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { FallecidosComponent } from './pages/fallecidos/fallecidos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EditarComponent } from './pages/editar/editar.component';
-import { CrearUbicacionComponent } from '../shared/componentes/crear-ubicacion/crear-ubicacion.component';
 
 const routes : Routes =
 [
@@ -21,10 +20,6 @@ const routes : Routes =
     {
       path:'agregar',
       component:AgregarComponent,
-    },
-    {
-      path:'ubicacion',
-      component:CrearUbicacionComponent
     },
      {
         path:'editar/:id',

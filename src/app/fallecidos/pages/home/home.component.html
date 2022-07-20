@@ -11,6 +11,14 @@
         </mat-toolbar>
 
         <mat-nav-list>
+            <a routerLink="/sepulturas/agregarsep" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>view_carousel</mat-icon>
+                <span>Añadir Sepulturas</span>
+            </a>
+            <a routerLink="/sepulturas/mostrarsep" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>visibility</mat-icon>
+                <span>Mostrar Sepulturas</span>
+            </a>
             <a routerLink="/fallecidos/agregar" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>add</mat-icon>
                 <span>Agregar Registros</span>

@@ -26,8 +26,21 @@ const routes: Routes = [
     canLoad: [ ValidarTokenGuard ]
     },
   {
+    path:'sepulturas',
+    loadChildren:() => import('./sepulturas/sepulturas.module').then(m => m.SepulturasModule),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+    },
+  {
     path:'fallecidos',
     loadChildren:() => import('./fallecidos/fallecidos.module').then(m => m.FallecidosModule),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
+  
+  },
+  {
+    path:'comentarios',
+    loadChildren:() => import('./comentarios/comentarios.module').then(m => m.ComentariosModule),
     canActivate: [ ValidarTokenGuard ],
     canLoad: [ ValidarTokenGuard ]
   
